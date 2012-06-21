@@ -1,0 +1,45 @@
+<% if @stocks.count > 0 %>
+
+<h1>Listing stocks</h1>
+
+<table class="table table-striped" id="stocks">
+<thead>
+  <tr>
+    <th>Product Code</th>
+    <th>Product Name</th>
+    <th>Quantity</th>
+    <th>Cost</th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<% @stocks.each do |stock| %>
+  <tr>
+    <td class="stock_cell"><%= stock.product_code %></td> 
+    <td class="stock_cell"><%= stock.product_name %></td>
+    <td class="stock_cell"><%= stock.quantity %></td>
+    <td class="stock_cell"><%= stock.cost %></td>
+    <td class="stock_cell"><%= link_to 'Show', stock %></td>
+    <td class="stock_cell"><%= link_to 'Edit', edit_stock_path(stock) %></td>
+    <td class="stock_cell"><%= link_to 'Destroy', stock, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<%= link_to 'Export', stocks_path(request.parameters.merge({:format => :xls})) %>
+
+<br />
+
+<% else %>
+
+  <div class="empty_area">
+    <%= image_tag "empty.jpg" %>
+    <span class="empty_message">
+      This place seems to be empty.. go to new and add something
+    </span>
+  </div>
+<% end %>
+
+
