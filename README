@@ -1,0 +1,10 @@
+1. I used spreadsheet gem as stated by:
+http://code.dblock.org/exporting-data-to-excel-in-ruby-on-rails-w-spreadsheet-and-toxls
+
+2. I was able to export data in my table to an excel sheet,stocks.xls
+
+3. I want specific rows to be highlighted, based on the cell value of a given column. eg. rows of cell representing the quantity column should be red in color if the cell values of the column are <300.
+
+4. Alternatively, my table already has the rows highlighted as above. Is there any way I could preserve these colors while exporting?
+
+
